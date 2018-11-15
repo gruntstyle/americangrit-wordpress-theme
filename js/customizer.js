@@ -20,6 +20,8 @@
     //Show/hide the top navigation on scroll
     let navBar = document.getElementById('navContainer');
     let content = document.getElementById('content');
+    let podcastPageNavBar = document.getElementById('navContainerPodcastPage');
+    let podcastPageContent = document.getElementById('podcastPageContent');
     let arrow = document.getElementById('topArrow');
     let prevScrollPos = window.pageYOffset;
     
@@ -31,18 +33,24 @@
             if(currentScrollPos > 105 && prevScrollPos > currentScrollPos) {
                 navBar.style.position = 'fixed';
                 navBar.style.top = '-150px';
+                // podcastPageNavBar.style.position = 'fixed';
+                // podcastPageNavBar.style.top = '-150px';
                 content.style.paddingTop = '150px'; 
+                // podcastPageContent.style.paddingTop = '150px';
             }
             
             if(currentScrollPos < 105) {
                 navBar.style.position = 'static';
+                // podcastPageNavBar.style.position = 'static';
                 content.style.paddingTop = '0';
+                // podcastPageContent.style.paddingTop = '0';
                 $(arrow).css('display', 'none');
             }
 
             if(currentScrollPos > 105) {
                 if (prevScrollPos > currentScrollPos) {
                     navBar.style.top = "-100px";
+                    // podcastPageNavBar.style.top = "-100px";
                     $(arrow).css('display', 'block');
                     $(arrow).css('opacity', '1');
                 } 
@@ -51,6 +59,7 @@
             if(currentScrollPos > 300) {
                 if (prevScrollPos < currentScrollPos) {
                     navBar.style.top = "-150px";
+                    // podcastPageNavBar.style.top = "-150px";
                     $(arrow).css('display', 'block');
                     $(arrow).css('opacity', '0');
                 }
@@ -63,23 +72,30 @@
             if(currentScrollPos > 20 && prevScrollPos > currentScrollPos) {
                 navBar.style.position = 'fixed';
                 navBar.style.top = '-60px';
+                // podcastPageNavBar.style.position = 'fixed';
+                // podcastPageNavBar.style.top = '-60px';
                 content.style.paddingTop = '60px'; 
+                // podcastPageContent.style.paddingTop = '60px'; 
             }
 
             if(currentScrollPos < 20) {
                 navBar.style.position = 'static';
+                // podcastPageNavBar.style.position = 'static';
                 content.style.paddingTop = '0'; 
+                // podcastPageContent.style.paddingTop = '0';
             }
 
             if(currentScrollPos > 20) {
                 if (prevScrollPos > currentScrollPos) {
                     navBar.style.top = "-2px";
+                    // podcastPageNavBar.style.top = "-2px";
                 } 
             }
 
             if(currentScrollPos > 300) {
                 if (prevScrollPos < currentScrollPos) {
                     navBar.style.top = "-60px";
+                    // podcastPageNavBar.style.top = "-60px";
                 }
             }
             prevScrollPos = currentScrollPos;
