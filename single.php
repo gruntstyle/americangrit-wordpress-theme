@@ -50,7 +50,11 @@ get_header();
           </article>
         </section>
 
-				<?php if ( comments_open() || get_comments_number() ) :
+        <?php 
+        if( current_user_can('editor') || current_user_can('administrator')) {
+          echo do_shortcode('[post-views]');
+        }
+        if ( comments_open() || get_comments_number() ) :
 					comments_template();
 				endif;
 
