@@ -2,7 +2,7 @@
 
 //This is the template for the podcast landing page
 
-get_header(); 
+get_header('podcast'); 
 
 $category_id = get_query_var('cat');
 $category = get_category($category_id)->category_nicename;
@@ -13,14 +13,22 @@ $name = get_category($category_id)->name;
   <section class="row" id="podcastHeadingContainer">
     <img src="<?php echo get_template_directory_uri() ?>/assets/img/podcast-banner.jpg ?>">
     <h4 class="podcastHeadings">PLAY ALL</h4>
-    <iframe 
-      src="https://www.podomatic.com/embed/html5/podcast/5833391?style=normal&amp;autoplay=false" 
-      allowfullscreen="true" 
-      allow="autoplay; fullscreen" 
-      style="width: 728px; height: 208px;">
-    </iframe>
-    <!-- <img src="<?php //echo get_template_directory_uri() ?>/assets/img/art19-player.png ?>"> -->
-    <!-- <div class="art19-web-player awp-micro" data-episode-id="ae2a9907-258b-470f-8bfd-c4b0aa2efbb7"></div> -->
+    <?php //echo do_shortcode('[spreaker type=player
+          //                    resource="show_id=3228103"
+          //                    width="100%"
+          //                    height="350px"
+          //                    theme="light"
+          //                    playlist="show"
+          //                    playlist-continuous="true"
+          //                    autoplay="false"
+          //                    live-autoplay="false"
+          //                    chapters-image="true"
+          //                    episode-image-position="right"
+          //                    hide-logo="true"
+          //                    hide-likes="false"
+          //                    hide-comments="false"
+          //                    hide-sharing="false" ]')
+    ?>
     <h4 class="podcastHeadings">PAST EPISODES</h4>
   </section>
 <?php else: ?>
