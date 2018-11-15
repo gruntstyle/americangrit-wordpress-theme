@@ -62,7 +62,11 @@ get_header();
                         </span>
                       </article></a>
                     </section>
-                    <?php the_excerpt(); ?>
+                    <?php the_excerpt(); 
+                    if( current_user_can('editor') || current_user_can('administrator')) {
+                      echo do_shortcode('[post-views]');
+                    }
+                    ?>
                     <svg height="3" width="90%" class="postsDivider">
                       <line x1="0" y1="0" x2="800" y2="0" style="stroke:rgb(229,229,229);stroke-width:3" />
                     </svg>
